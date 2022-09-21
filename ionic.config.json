@@ -1,0 +1,7 @@
+{
+  "name": "nobby",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
