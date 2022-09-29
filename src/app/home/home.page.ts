@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private toastRiferimento: ToastController) {}
+
+  async funzioneToast() {
+    const toastOggetto = await this.toastRiferimento.create({
+      message: 'Frank non è stato eletto!',
+      duration: 1500,
+      position: "middle"
+    });
+
+    await toastOggetto.present();
+  }
 
 }

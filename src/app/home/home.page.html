@@ -1,7 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      <p style = "text-align: center; color: blue; font-size: 20px; font-family: verdana"> 
+        <b>Frank Penna </b>
+      </p>
+      <p style = "text-align: center; color: green; font-size: 13px; font-family: verdana"> 
+        Neoeletto deputato alla camera
+      </p>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +19,21 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <h2 style = "text-align: left"> Foto </h2>
+      <img src = "https://www.agenzianova.com/news/wp-content/uploads/2022/08/di-maio-kiev.jpg" alt = "Foto del profilo"
+          style="width:180px; height:120px;">
+    <h2 style = "text-align: left"> Curriculum </h2>
+      <ol style = "text-align: left; color: black; font-size: 15px; font-family: verdana">
+        <li>Diploma scuola con votazione ottima</li>
+        <li>Precedentemente eletto alla camera</li>
+        <li>Dirigente presso l'azienza</li>
+      </ol>
+    <h2 style = "text-align: left"> Video </h2>
+    <iframe width="250" height="140" src="https://www.youtube.com/embed/7UTysjjsj54" title="Candidato" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h2 style = "text-align: left"> Link esterno </h2>
+      <p style = "text-align: left; color: black; font-size: 15px; font-family: verdana">
+        Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <br>
+      <ion-button expand="block" (click)="funzioneToast('bottom')">Cliccami ora poi !!!!!</ion-button>
   </div>
 </ion-content>
