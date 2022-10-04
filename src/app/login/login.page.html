@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<h1> LOGIN-Page </h1>
+
+<ion-item>
+  <ion-label>Inserisci Nome Utente</ion-label>
+  <ion-input placeholder="es: Mario" type="text" [(ngModel)]="varNome"> </ion-input>
+
+</ion-item>
+
+<ion-item>
+  <ion-label>Inserisci Password</ion-label>
+  <ion-input placeholder="es: 9098" type="password" [(ngModel)]="varPsw"> </ion-input>
+</ion-item>
+
+<ion-button [routerLink]="['/home']">Vai a Casa-Home</ion-button>
+<ion-button (click)="funzioneCheck()">Vai a Casa-Home se Nome e Psw sono corretti</ion-button>
+
+<ion-button (click)="logMe()">ConsoleLog</ion-button>
+
+</ion-content>

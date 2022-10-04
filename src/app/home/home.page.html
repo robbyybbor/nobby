@@ -18,7 +18,7 @@
         <ion-col>
           1 of 1 <br>
           Foto <br>
-          <div style="text-align: right">
+          <div style="text-align: center">
           <img src = "https://www.agenzianova.com/news/wp-content/uploads/2022/08/di-maio-kiev.jpg" alt = "Foto del profilo"
               style="width:120px; height:80px">
           </div>
@@ -31,24 +31,22 @@
           ciao
         </ion-col>
         <ion-col id="formattazione_cella" size="10" style="text-align: left">
-
-
-              2 of 2
-              <h2 style = "text-align: left"> Curriculum </h2>
-              <ol style = "text-align: left; color: black; font-size: 15px; font-family: verdana">
-                <li>Diploma scuola con votazione ottima</li>
-                <li>Precedentemente eletto alla camera</li>
-              </ol>
-              <ion-card>
-                <ion-item href="https://www.google.com" class="ion-activated">
-                  <ion-icon name="wifi" slot="start"></ion-icon>
-                  <ion-label>Accedi a Google</ion-label>
-                </ion-item>
-                <ion-item href="#">
-                  <ion-icon name="wine" slot="start"></ion-icon>
-                  <ion-label>Card Link Item 2</ion-label>
-                </ion-item>
-              </ion-card>
+          2 of 2
+          <h2 style = "text-align: left"> Curriculum </h2>
+          <ol style = "text-align: left; color: black; font-size: 15px; font-family: verdana">
+            <li>Diploma scuola con votazione ottima</li>
+            <li>Precedentemente eletto alla camera</li>
+          </ol>
+          <ion-card>
+            <ion-item href="https://www.google.com" class="ion-activated">
+              <ion-icon name="wifi" slot="start"></ion-icon>
+              <ion-label>Accedi a Google</ion-label>
+            </ion-item>
+            <ion-item href="#">
+              <ion-icon name="wine" slot="start"></ion-icon>
+              <ion-label>Card Link Item 2</ion-label>
+            </ion-item>
+          </ion-card>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -58,5 +56,8 @@
       Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       <br>
     <ion-button expand="block" (click)="funzioneToast('bottom')">Cliccami</ion-button>
+    <div style="text-align: center">
+      <ion-button shape="round" [routerLink]="['/login']">Vai a Loghin</ion-button>
+    </div>
   </div>
 </ion-content>
