@@ -14,6 +14,9 @@ export class LoginPage implements OnInit {
   varNome: string = "";
   varPsw: string = "";
   varBool: boolean;
+  showPsw: boolean = true;
+  varType: string = "text";
+  varIcon: string = "eye-off-outline";
 
   ngOnInit() {
   }
@@ -28,8 +31,22 @@ export class LoginPage implements OnInit {
       this.varBool = true;
       this.router.navigate(['/home']);
     } else {
-      console.log('Dati errati!')
+      console.log('Dati errati! La password inserità è:', this.varPsw)
       this.varBool = false;
+    }
+  }
+
+  toggleShowPsw(){
+    if (this.varType === "text") {
+      this.varType = "password";
+    } else {
+      this.varType = "text";
+    }
+
+    if(this.varIcon === "eye-off-outline") {
+      this.varIcon = "eye-outline";
+    } else {
+      this.varIcon = "eye-off-outline";
     }
   }
   

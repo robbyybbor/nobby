@@ -10,12 +10,32 @@
 <ion-item>
   <ion-label>Inserisci Nome Utente</ion-label>
   <ion-input placeholder="es: Mario" type="text" [(ngModel)]="varNome"> </ion-input>
-
 </ion-item>
 
-<ion-item>
+<ion-item *ngIf="showPsw"> <!-- se showPsw è true fa questo codice -->
   <ion-label>Inserisci Password</ion-label>
-  <ion-input placeholder="es: 9098" type="password" [(ngModel)]="varPsw"> </ion-input>
+  <ion-input placeholder="es: 9098" type="text" [(ngModel)]="varPsw"> </ion-input>
+  <ion-icon name="eye-off-outline"></ion-icon>
+</ion-item>
+
+<ion-item *ngIf="!showPsw"> <!-- se showPsw è false fa questo codice -->
+  <ion-label>Inserisci Password</ion-label>
+  <ion-input placeholder="es: 9098" type="Password" [(ngModel)]="varPsw"> </ion-input>
+  <ion-icon name="eye-outline"></ion-icon>
+</ion-item>
+
+<br>
+<ion-item *ngIf="!varNome == ''"> <!-- se la variabile varNome contiene qualcosa, fa apparire la password -->
+  <ion-label>Inserisci Password *ngif</ion-label> <!-- fatto con *ngif -->
+  <ion-input placeholder="es: 9098" [type]="varType" [(ngModel)]="varPsw"> </ion-input>
+  <ion-icon (click)="toggleShowPsw()" [name]="varIcon"> </ion-icon>
+</ion-item>
+
+<br>
+<ion-item [hidden] = "varNome == ''"> <!-- se la variabile varNome contiene qualcosa, fa apparire la password -->
+  <ion-label>Inserisci Password hidden</ion-label> <!-- fatto con proprietà HIDDEN dei TAG HTML -->
+  <ion-input placeholder="es: 9098" [type]="varType" [(ngModel)]="varPsw"> </ion-input>
+  <ion-icon (click)="toggleShowPsw()" [name]="varIcon"> </ion-icon>
 </ion-item>
 
 <ion-button [routerLink]="['/home']">Vai a Casa-Home</ion-button>
