@@ -12,8 +12,6 @@ export class LoginPage implements OnInit {
 
   constructor(private router: Router){}
 
-  arrayPersone: Persona[];
-
   varNome: string = "";
   varPsw: string = "";
   varBool: boolean;
@@ -21,62 +19,32 @@ export class LoginPage implements OnInit {
   varType: string = "text";
   varIcon: string = "eye-off-outline";
 
-  persona1: Persona;
-  
-  myArray: string[] = ['prim_Elem', 'econd_Elem', 'zo_EL']; /* I modo per dichiarare e inizializzare un array */
-  myArray2 = ['prim_Elem', 'econd_Elem', 'zo_EL']; /* II modo per dichiarare e inizializzare un array GENERICAMENTE */
-  myArray3 = Array(); /* III modo per dichiarare un array GENERICAMENTE, poi si usa PUSH e POP */
-  myArray4 = []; /* IV modo per dichiarare un array GENERICAMENTE */
-
   ngOnInit() {
+    let arrayObj = [];
+    arrayObj.push({
+      nome: 'anakin', 
+      cognome: 'skywalker',
+      anni: 100
+    });
+    arrayObj.push({nome: 'obi', cognome: 'kenobi', anni: 60});
+    arrayObj.push({nome: 'yoda', cognome: 'mando', anni: 150,});
 
-    let myArray_inside = [] /* V modo per dichiarare un array GENERICAMENTE */
-    myArray_inside.push('ciao');
-    myArray_inside.push(1);
-    console.log('myArray_inside:', myArray_inside);
+    console.log('arrayObj:', arrayObj);
 
-    console.log('myArray:', this.myArray);
+    let arrayObjSortedFake = [...arrayObj].sort(); /* non ordina l'array di oggetti in base a anni */
+    console.log('arrayObjSortedFake (non ordina!):', arrayObjSortedFake);
 
-    this.persona1 = { /* inizializzo l'oggetto persona1 */
-      name: 'eta',
-      surname: 'eta',
-      age: 12
-    }
-    
-    this.myArray3.push('ciao');
-    this.myArray3.push(2);
-    this.myArray3.push(this.persona1);
-    console.log('myArray3:', this.myArray3);
+    let compareFn = /* crea una variabile che è una funziona da passare a sort */
+      (a, b) => { 
+      if (a.anni > b.anni) return 1;
+      if (a.anni < b.anni) return -1;
+      return 0;
+      }
 
-    let ordinato = [...this.myArray].sort(); /* con [... ] mi crea una copia altrimenti sort sovrascrive */
-    console.log('myArray ordinato:', ordinato); /* [... ] è lo SPREAD OPERATOR */
+    let arrayObjSorted = [...arrayObj].sort(compareFn); /* adesso ordina l'array di oggetti in base a anni*/
+    console.log('arrayObjSorted (ordinato!):', arrayObjSorted);
 
-    console.log(this.myArray.concat('concatenazione array', ['poi1', '4tr']));
 
-    console.log('trova parole che hanno o come seconda lettera:', this.myArray.filter(
-      item => item.indexOf('o') === 1 /* mi trova la parola che ha la seconda lettera = o */
-        )
-    )
-
-    console.log('trova parola cha hanno o da seconda lettera o:', this.myArray.filter(
-      item => item.indexOf('o') >= 1 /* mi trova le parole che dalla seconda lettera hanno o */
-        )
-    )
-    
-    console.log('stampa parola uguale a zo_EL:', this.myArray.find(
-      item => item.indexOf('zo_EL') === 0
-      )
-    )
-
-  console.log('stampa indice di parola uguale a zo_EL:', this.myArray.findIndex(
-    item => item.indexOf('zo_EL') === 0
-    )
-  )
-
-  console.log('unisce gli elementi con -:', this.myArray.join('-'));
-
-  this.myArray.unshift('nuovEl');
-  console.log('aggiunge un elemento:', this.myArray);
 }
 
   logMe(){
