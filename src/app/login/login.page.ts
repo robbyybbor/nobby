@@ -20,32 +20,64 @@ export class LoginPage implements OnInit {
   showPsw: boolean = true;
   varType: string = "text";
   varIcon: string = "eye-off-outline";
-  myArray: string[] = ['prim_Elem', 'second_Elem', 'terzo_EL'];
 
+  persona1: Persona;
+  
+  myArray: string[] = ['prim_Elem', 'econd_Elem', 'zo_EL']; /* I modo per dichiarare e inizializzare un array */
+  myArray2 = ['prim_Elem', 'econd_Elem', 'zo_EL']; /* II modo per dichiarare e inizializzare un array GENERICAMENTE */
+  myArray3 = Array(); /* III modo per dichiarare un array GENERICAMENTE, poi si usa PUSH e POP */
+  myArray4 = []; /* IV modo per dichiarare un array GENERICAMENTE */
 
   ngOnInit() {
-    console.log(this.myArray);
 
-    for (let i = 0; i < this.myArray.length; i++) { /* Primo tipo di FOR */
-      console.log(this.myArray[i], 'primo metodo FOR');
+    let myArray_inside = [] /* V modo per dichiarare un array GENERICAMENTE */
+    myArray_inside.push('ciao');
+    myArray_inside.push(1);
+    console.log('myArray_inside:', myArray_inside);
+
+    console.log('myArray:', this.myArray);
+
+    this.persona1 = { /* inizializzo l'oggetto persona1 */
+      name: 'eta',
+      surname: 'eta',
+      age: 12
     }
+    
+    this.myArray3.push('ciao');
+    this.myArray3.push(2);
+    this.myArray3.push(this.persona1);
+    console.log('myArray3:', this.myArray3);
 
-    for (let valore of this.myArray){ /* Secondo tipo di FOR */
-      console.log(valore, 'secondo metodo FOR');
-    }
+    let ordinato = [...this.myArray].sort(); /* con [... ] mi crea una copia altrimenti sort sovrascrive */
+    console.log('myArray ordinato:', ordinato); /* [... ] è lo SPREAD OPERATOR */
 
-    let iterabile =this.myArray.values() /* Terzo tipo di FOR */
-    for (let i of iterabile){
-      console.log(i, 'terzo metodo FOR');
-    }
+    console.log(this.myArray.concat('concatenazione array', ['poi1', '4tr']));
 
-    this.myArray.forEach(
-      elemento =>{
-        console.log(elemento, 'quarto metodo FOR');
-      }
+    console.log('trova parole che hanno o come seconda lettera:', this.myArray.filter(
+      item => item.indexOf('o') === 1 /* mi trova la parola che ha la seconda lettera = o */
+        )
+    )
+
+    console.log('trova parola cha hanno o da seconda lettera o:', this.myArray.filter(
+      item => item.indexOf('o') >= 1 /* mi trova le parole che dalla seconda lettera hanno o */
+        )
     )
     
-  }
+    console.log('stampa parola uguale a zo_EL:', this.myArray.find(
+      item => item.indexOf('zo_EL') === 0
+      )
+    )
+
+  console.log('stampa indice di parola uguale a zo_EL:', this.myArray.findIndex(
+    item => item.indexOf('zo_EL') === 0
+    )
+  )
+
+  console.log('unisce gli elementi con -:', this.myArray.join('-'));
+
+  this.myArray.unshift('nuovEl');
+  console.log('aggiunge un elemento:', this.myArray);
+}
 
   logMe(){
     console.log(this)
