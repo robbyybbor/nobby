@@ -43,4 +43,8 @@
 
 <ion-button (click)="logMe()">ConsoleLog</ion-button>
 
+<ion-item *ngFor="let item of myArray; index as i"> <!-- FOR nel file HTML -->
+  <p>{{item}} FOR nel HTML</p>
+</ion-item>
+
 </ion-content>
