@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'search-in-array',
+    loadChildren: () => import('./search-in-array/search-in-array.module').then( m => m.SearchInArrayPageModule)
+  },
 ];
 
 @NgModule({

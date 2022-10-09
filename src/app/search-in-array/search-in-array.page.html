@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cerca in array</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="query" (ionChange)="itemsFilter()" type="text" ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center"> 
+    <p>Gli elementi trovato sono:</p>
+    <ion-item *ngFor="let item of filteredItems; index as i">
+      <p>{{i+1}} - {{item}}</p>
+    </ion-item>
+    <div *ngIf="lenghtFilteredItems > shower">
+      <ion-note (click)="showMore()"> Aggiungi un altro elemento</ion-note>
+    </div>
+  </div>
+</ion-content>

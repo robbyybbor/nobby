@@ -40,11 +40,8 @@
 
 <ion-button [routerLink]="['/home']">Vai a Casa-Home</ion-button>
 <ion-button (click)="funzioneCheck()">Vai a Casa-Home se Nome e Psw sono corretti</ion-button>
+<ion-button [routerLink]="['/search-in-array']">Vai a funzione SeachInArray</ion-button>
 
 <ion-button (click)="logMe()">ConsoleLog</ion-button>
-
-<ion-item *ngFor="let item of myArray; index as i"> <!-- FOR nel file HTML -->
-  <p>{{item}} FOR nel HTML</p>
-</ion-item>
 
 </ion-content>

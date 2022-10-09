@@ -19,33 +19,7 @@ export class LoginPage implements OnInit {
   varType: string = "text";
   varIcon: string = "eye-off-outline";
 
-  ngOnInit() {
-    let arrayObj = [];
-    arrayObj.push({
-      nome: 'anakin', 
-      cognome: 'skywalker',
-      anni: 100
-    });
-    arrayObj.push({nome: 'obi', cognome: 'kenobi', anni: 60});
-    arrayObj.push({nome: 'yoda', cognome: 'mando', anni: 150,});
-
-    console.log('arrayObj:', arrayObj);
-
-    let arrayObjSortedFake = [...arrayObj].sort(); /* non ordina l'array di oggetti in base a anni */
-    console.log('arrayObjSortedFake (non ordina!):', arrayObjSortedFake);
-
-    let compareFn = /* crea una variabile che è una funziona da passare a sort */
-      (a, b) => { 
-      if (a.anni > b.anni) return 1;
-      if (a.anni < b.anni) return -1;
-      return 0;
-      }
-
-    let arrayObjSorted = [...arrayObj].sort(compareFn); /* adesso ordina l'array di oggetti in base a anni*/
-    console.log('arrayObjSorted (ordinato!):', arrayObjSorted);
-
-
-}
+  ngOnInit() {}
 
   logMe(){
     console.log(this)
