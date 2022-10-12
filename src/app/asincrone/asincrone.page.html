@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>asincrone</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br> Funzione setTimeout<br>
+  <ion-button (click)="setTimeoutDouble()">Funzione setTimeout eseguita dopo un tot</ion-button>
+  <ion-button (click)="setTimeoutFor()">Funzione setTimeout con ciclo FOR</ion-button>
+  <br> Funzione setInterval<br>
+  <ion-button (click)="setIntervallo()">Funzione setInterval aggiornata ogni tot</ion-button>
+  <ion-button (click)="stopSetInterval1()">Funzione blocca setInterval</ion-button>
+  <br> Rotella che carica<br>
+  <ion-button (click)="showLoading3sec()">Mostra caricamento 3 secondi</ion-button>
+  <ion-button (click)="showLoadingInfinite()">Mostra caricamento infinito</ion-button>
+  <ion-button (click)="showLoadingInterrupted()">Mostra caricamento interroto dopo 4 sec</ion-button>
+  <br> Funzione Promise<br>
+  <ion-button (click)="applicaTrue()">Applica true a funzione promise (risolta)</ion-button>
+  <ion-button (click)="applicaFalse()">Applica false a funzione promise (eccezione)</ion-button>
+  <br> Funzione Asincrona ASYNC - AWAIT<br>
+  <ion-button (click)="funzioneAsincrona()">Applica true a funzione promise con ASYNC - AWAIT </ion-button>
+  <ion-button (click)="funzioneAsincronaFetch()">Esegue Fetch con ASYNC - AWAIT </ion-button>
+
+
+
+  <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
+</ion-content>

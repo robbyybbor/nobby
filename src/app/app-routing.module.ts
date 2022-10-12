@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'search-in-array',
     loadChildren: () => import('./search-in-array/search-in-array.module').then( m => m.SearchInArrayPageModule)
   },
+  {
+    path: 'asincrone',
+    loadChildren: () => import('./asincrone/asincrone.module').then( m => m.AsincronePageModule)
+  },
 ];
 
 @NgModule({
