@@ -23,6 +23,14 @@ const routes: Routes = [
     path: 'asincrone',
     loadChildren: () => import('./asincrone/asincrone.module').then( m => m.AsincronePageModule)
   },
+  {
+    path: 'asincrone2',
+    loadChildren: () => import('./asincrone2/asincrone2.module').then( m => m.Asincrone2PageModule)
+  },
+  {
+    path: 'lista-pokemn',
+    loadChildren: () => import('./lista-pokemn/lista-pokemn.module').then( m => m.ListaPokemnPageModule)
+  },
 ];
 
 @NgModule({

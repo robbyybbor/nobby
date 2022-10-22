@@ -8,7 +8,7 @@ import { LoadingController } from '@ionic/angular';
 })
 export class AsincronePage implements OnInit {
 
-  private setIntervalId : any;
+  private setIntervalId : any; /* creo una variabile per memorizzarci una funzione */
 
   constructor(private loadingCtrl: LoadingController) { }
 
@@ -46,7 +46,7 @@ export class AsincronePage implements OnInit {
 
   public setIntervallo(){ /* setInterval è una funzione asincrona che esegue un'altra funzione ciclicamente */
     let indice: number = 0;
-    this.setIntervalId = setInterval( /* uso la variabile fuzione, per stopparla con stopSetIntervalId*/
+    this.setIntervalId = setInterval( /* uso la fuzione memorizzata come variabile, per stopparla con stopSetIntervalId*/
       (lambda) => {
         indice = indice + 1;
         console.log('funzione setInterval invocata ogni 1 secondo -', indice, 'volta')
@@ -112,7 +112,7 @@ export class AsincronePage implements OnInit {
   }
 
   /* creo una funzione PROMISE con meccanismo CALLBACK */
-  /*  mi restituisce ud doppio risultato: nel caso risolve e nel caso rigetta (manca il CATCH)*/
+  /*  mi restituisce un doppio risultato: nel caso risolve e nel caso rigetta (manca il CATCH)*/
   funzionePromise(val: boolean): Promise<string> {
     return new Promise((resolve, reject) => {
       if (val) {
@@ -157,6 +157,18 @@ export class AsincronePage implements OnInit {
     res = await this.funzionePromise(true);
     console.log('prima istruzione');
     console.log(res)
+  }
+
+  async funzioneAsincrona2() {
+    let res: any;
+    res = await this.funzionePromise(false);
+    console.log('poi istruzione');
+    console.log(res)
+  }
+
+  funzioee(){
+    this.funzioneAsincrona2()
+    this.funzioneAsincrona()
   }
 
   async funzioneAsincronaFetch() {
