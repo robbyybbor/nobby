@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-lista-pokemn',
@@ -8,12 +7,12 @@ import { LoadingController } from '@ionic/angular';
 })
 export class ListaPokemnPage implements OnInit {
 
-  constructor(private loadingCtrl: LoadingController) { }
+  constructor() { }
 
   items = [];
 
   ngOnInit() {
-    this.init();
+    this.load();
   }
 
   async load() {
@@ -42,32 +41,4 @@ export class ListaPokemnPage implements OnInit {
       }
     );
   }
-
-  doRefresh(event) {
-    this.load().then(
-      () => {
-        event.target.complete();
-      }
-    );
-  }
-
-  showLoading() {
-    this.loadingCtrl
-      .create({
-        message: 'Loading...',
-      })
-      .then((loading) => {
-        loading.present().then(() => console.log('Loader caricato!'));
-      });
-  }
-
-  async init() {
-    this.showLoading();
-    this.load().then(
-      () => { this.loadingCtrl
-        .dismiss()
-        .then();}
-    );
-  }
-
 }

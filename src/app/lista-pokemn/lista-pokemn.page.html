@@ -5,32 +5,20 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-refresher
-  (ionRefresh)="doRefresh($event)"
-  slot="fixed"
-  pullFactor="0.5"
-  pullMin="100"
-  pullMax="200">
-  <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-
   <ion-title> Items </ion-title>
 
 
-  <cdk-virtual-scroll-viewport itemSize="43" minBufferPx="650" maxBufferPx="1300">
-    <ion-list>
-      <ion-item *cdkVirtualFor="let item of items">
+  <ul class="list">
+    <cdk-virtual-scroll-viewport  style="height: 500px" itemSize="5" >
+      <ion-list *cdkVirtualFor="let item of items">
         <ion-avatar slot="start">
           <img *ngIf="item.id <10" src="https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/00{{item.id}}.png"/>
           <img *ngIf="item.id >=10" src="https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/0{{item.id}}.png"/>
         </ion-avatar>
         <ion-label>{{item.name.english}}</ion-label>
-      </ion-item>
-    </ion-list>
-  </cdk-virtual-scroll-viewport>
+      </ion-list>
+    </cdk-virtual-scroll-viewport>
+  </ul>
 
-
-  <ion-button (click)="stopTimeout()"> Stop </ion-button>
 
 </ion-content>
